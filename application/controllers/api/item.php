@@ -21,7 +21,7 @@ class Item extends REST_Controller {
   public function index_post()
   {
     $input = $this->input->post();
-    $this->db->insert('items',$input);
+    $this->db->insert_batch('items',$input);
 
     $this->response(['Item created successfully.'], REST_Controller::HTTP_OK);
   }
